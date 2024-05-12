@@ -3,9 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Liliana Cortes Galleguillos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #card {
+            width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #card:hover {
+            transform: scale(1.05);
+        }
+
+        #card-content {
+            text-align: left;
+            display: none;
+        }
+
+        .heart {
+            color: red;
+            animation: beat 1s infinite alternate;
+        }
+
+        @keyframes beat {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        .message-span {
+            display: block;
+            background-color: #f0f0f0;
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        #show-message-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #show-message-btn:hover {
+            background-color: #45a049;
+        }
+
+        .decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .decorations .heart {
+            position: absolute;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        .heart1 {
+            font-size: 30px;
+            color: #ff8080;
+            top: 10%;
+            left: 5%;
+            animation-name: beat1;
+        }
+
+        .heart2 {
+            font-size: 20px;
+            color: #ff99cc;
+            top: 20%;
+            left: 20%;
+            animation-name: beat2;
+        }
+
+        .heart3 {
+            font-size: 40px;
+            color: #ffcccc;
+            top: 30%;
+            left: 60%;
+            animation-name: beat3;
+        }
+
+        @keyframes beat1 {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes beat2 {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.4);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes beat3 {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.6);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+<div id="card" onclick="toggleCard()">
+    <div id="titulo">
+        <h2>De Fernando para mami</h2>
+    </div>
+    <p>Haz clic aquí para ver la carta</p>
+    <div id="card-content">
+        <br>
+        <br>
+        <span class="message-span">Mi muy querida y amada Mami,</span>
+        <span class="message-span">En este día tan señalado, deseo tomar un momento para expresarte el hondo amor y gratitud que anida en mi pecho hacia ti. Hoy, en el día de la madre (en Chile), es menester hacerte saber la gran fortuna que supone para mí el tener a una madre como tú.</span>
+        <span class="message-span">Mami, eres la luz que alumbra cada jornada de mi existencia. Tu amor sin tasa y tu infinita bondad son el faro que me guía en las horas adversas y la dicha que colma mis días de gozo. No existen vocablos suficientes para expresar cuánto te amo, pero he de decir que te amo muchísimo, más allá de lo que la palabra alcanza a expresar.</span>
+        <span class="message-span">Aunque la distancia física nos separe en este momento, quiero que sepas que siempre te llevo en mi corazón y en mis pensamientos. Anhelo el momento en que podamos reunirnos nuevamente, para poder estrecharte entre mis brazos y decirte cuánto te quiero cara a cara.</span>
+        <span class="message-span">En este día de la madre (en Chile), deseo para ti toda la felicidad y el amor que mereces. Eres una madre excepcional, y mi gratitud hacia ti es eterna por todo lo que haces por mí. Espero que este día esté colmado de ternura y momentos memorables, porque tú, sobre todas las cosas, mereces ser feliz independiente de la distancia entre tus hijos, porque será física mas no emocional.</span>
+        <span class="message-span">¡Feliz día mami! Que este día esté repleto de sonrisas, abrazos y todo el amor que te corresponde.</span>
+        <span class="message-span">Con todo mi cariño y admiración,</span>
+        <span class="message-span">Fer.</span>
+    </div>
+</div>
+
+<div class="decorations">
+    <span class="heart heart1">❤</span>
+    <span class="heart heart2">❤</span>
+    <span class="heart heart3">❤</span>
+</div>
+
+    <script>
+        function toggleCard() {
+            var cardContent = document.getElementById("card-content");
+            cardContent.style.display = (cardContent.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
 </body>
 </html>
